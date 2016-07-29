@@ -7,9 +7,16 @@ module.exports = function(source) {
 	this.cacheable && this.cacheable();
 
    const options = {
-      trace: query.trace ? true : false,
+      trace: tobool(query.trace) || false,
       brackets: query.brackets || '{ }',
-      useRioctRuntime: query.useRioctRuntime ? true : false
+      useRioctRuntime: tobool(query.useRioctRuntime) || false,
+      normalizeHtmlWhitespace: tobool(query.normalizeHtmlWhitespace) || true
    }
 	return rioctCli(source, options, this.resourcePath);
 };
+
+function tobool(s) {
+   if(s === undefined) return undefined;
+   if(s == 'true') return true;
+   return false;
+}
