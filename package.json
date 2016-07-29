@@ -1,0 +1,19 @@
+{
+  "name": "rioct-loader",
+  "version": "0.0.1",
+  "description": "rioct templates webpack loader",
+  "main": "rioct-loader.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Antonino Porcino <nino.porcino@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nippur72/rioct-loader.git"
+  },
+  "dependencies": {
+    "rioct-cli": "^0.3.0"
+  }
+}
