@@ -1,8 +1,8 @@
 # rioct-loader
 
-`rioct-loader` is the webpack loader for Rioct templates.
+`rioct-loader` is the webpack loader for [Rioct](https://github.com/nippur72/rioct-cli) templates.
 
-Allows to `require()` template source files directly from JavaScript
+Allows to `require()` template source files directly from JavaScript,
 letting Webpack compile them and put in the bundle.
 
 ## Installation
