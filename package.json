@@ -1,6 +1,6 @@
 {
   "name": "rioct-loader",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "rioct templates webpack loader",
   "main": "rioct-loader.js",
   "scripts": {
