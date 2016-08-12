@@ -12,7 +12,8 @@ module.exports = function(source) {
       brackets: query.brackets || '{ }',
       useRioctRuntime: tobool(query.useRioctRuntime) || false,
       normalizeHtmlWhitespace: tobool(query.normalizeHtmlWhitespace) || true,
-      checkUndefined: tobool(query.checkUndefined) || false
+      checkUndefined: tobool(query.checkUndefined) || false,
+      createElementAlias: query.createElementAlias
    }
 	return rioctCli(source, options, this.resourcePath);
 };
