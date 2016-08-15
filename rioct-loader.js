@@ -11,9 +11,12 @@ module.exports = function(source) {
       trace: tobool(query.trace) || false,
       brackets: query.brackets || '{ }',
       useRioctRuntime: tobool(query.useRioctRuntime) || false,
-      normalizeHtmlWhitespace: tobool(query.normalizeHtmlWhitespace) || true,
       checkUndefined: tobool(query.checkUndefined) || false,
-      createElementAlias: query.createElementAlias
+      normalizeHtmlWhitespace: tobool(query.normalizeHtmlWhitespace) || true,
+      createElementAlias: query.createElementAlias,
+      reactImportPath: query.reactImportPath || 'react',
+      lodashImportPath: query.lodashImportPath || 'lodash',
+      targetVersion: query.targetVersion || '15.0.0'
    }
 	return rioctCli(source, options, this.resourcePath);
 };
