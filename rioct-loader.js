@@ -16,7 +16,8 @@ module.exports = function(source) {
       createElementAlias: query.createElementAlias,
       reactImportPath: query.reactImportPath || 'react',
       lodashImportPath: query.lodashImportPath || 'lodash',
-      targetVersion: query.targetVersion || '15.0.0'
+      targetVersion: query.targetVersion || '15.0.0',
+      typescript: tobool(query.typescript) || false,
    }
 	return rioctCli(source, options, this.resourcePath);
 };
