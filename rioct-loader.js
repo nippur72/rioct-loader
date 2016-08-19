@@ -18,6 +18,7 @@ module.exports = function(source) {
       lodashImportPath: query.lodashImportPath || 'lodash',
       targetVersion: query.targetVersion || '15.0.0',
       typescript: tobool(query.typescript) || false,
+      externalHelpers: query.externalHelpers
    }
 	return rioctCli(source, options, this.resourcePath);
 };
