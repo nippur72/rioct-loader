@@ -3,7 +3,7 @@ var rioctCli = require('rioct-cli/webpack').webpack;
 var url = require('url');
 var queryString = require('querystring');
 
-module.exports = function(source) {
+module.exports = function(source, map) {
 	var query = queryString.parse(url.parse(this.query).query);
 	this.cacheable && this.cacheable();
 
@@ -20,7 +20,17 @@ module.exports = function(source) {
       typescript: tobool(query.typescript) || false,
       externalHelpers: query.externalHelpers
    }
-	return rioctCli(source, options, this.resourcePath);
+
+   try
+   {
+      const result = rioctCli(source, options, this.resourcePath);
+      this.callback(null, result, map);
+   }
+   catch(err)
+   {
+      if(typeof err === 'string') this.callback(new Error(err));
+      else this.callback(err);
+   }
 };
 
 function tobool(s) {
